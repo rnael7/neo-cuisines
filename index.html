@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neo Cuisines | Cuisines italiennes sur-mesure</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Neo Cuisines, spécialiste des cuisines italiennes sur-mesure à Saint-Denis, La Réunion. Conception, rénovation et installation de cuisines haut de gamme.">
+<meta property="og:title" content="Neo Cuisines | Cuisines italiennes sur-mesure à La Réunion">
+<meta property="og:description" content="Conception, rénovation et installation de cuisines italiennes haut de gamme à Saint-Denis.">
+<meta property="og:image" content="cuisine-hero.jpg">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+--black:#0d0d0d;
+--dark:#171717;
+--grey:#242424;
+--red:#b51f24;
+--light:#f4f1ec;
+--muted:#b8b8b8;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:'Inter', sans-serif;
+background:var(--black);
+color:var(--light);
+}
+
+/* TITRES = IMPACT VISUEL */
+h1,h2,.section-title{
+font-family:'Bebas Neue', sans-serif;
+letter-spacing:2px;
+}
+
+/* HERO = ULTRA IMPACT */
+.hero h1{
+font-family:'Bebas Neue', sans-serif;
+font-size:82px;
+letter-spacing:3px;
+}
+
+/* NAV + BOUTONS */
+nav a,.btn,button{
+font-family:'Inter', sans-serif;
+letter-spacing:1px;
+font-weight:600;
+text-transform:uppercase;
+}
+
+/* TEXTE */
+p{
+font-family:'Inter', sans-serif;
+font-weight:300;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:28px 7%;
+background:rgba(13,13,13,.45);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.logo img{
+height:80px;
+object-fit:contain;
+filter:brightness(1.2) contrast(1.1);
+transition:.3s ease;
+}
+.logo img:hover{
+transform:scale(1.05);
+opacity:.9;
+}
+.logo span{color:var(--red)}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:28px;
+font-size:14px;
+font-weight:700;
+}
+
+.btn{
+display:inline-block;
+background:var(--red);
+color:white;
+padding:14px 28px;
+text-decoration:none;
+font-weight:800;
+border-radius:3px;
+transition:.25s;
+}
+
+.btn:hover{
+background:#d12b31;
+transform:translateY(-2px);
+}
+
+.hero{
+min-height:100vh;
+padding:190px 7% 80px;
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:60px;
+align-items:center;
+background:
+linear-gradient(120deg,rgba(13,13,13,.98),rgba(24,24,24,.92),rgba(85,10,15,.55)),
+url("cuisine-hero.jpg") center/cover;
+}
+
+.hero h1{
+font-size:72px;
+line-height:.95;
+text-transform:uppercase;
+margin:0 0 26px;
+}
+
+.hero h1 span{color:var(--red)}
+
+.hero p{
+font-size:20px;
+line-height:1.7;
+color:#ddd;
+max-width:620px;
+}
+
+.hero-card{
+background:rgba(255,255,255,.06);
+border:1px solid rgba(255,255,255,.12);
+padding:34px;
+backdrop-filter:blur(12px);
+}
+
+.hero-card h3{
+font-size:28px;
+margin-top:0;
+}
+
+.video-hero{
+position:relative;
+min-height:100vh;
+padding:190px 7% 80px;
+display:grid;
+grid-template-columns:1.05fr .95fr;
+gap:60px;
+align-items:center;
+overflow:hidden;
+}
+
+.hero-video{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:0;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(120deg,rgba(13,13,13,.92),rgba(24,24,24,.75),rgba(85,10,15,.55));
+z-index:1;
+}
+
+.hero-content,
+.hero-card{
+position:relative;
+z-index:2;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+border-top:1px solid #333;
+border-bottom:1px solid #333;
+background:#141414;
+}
+
+.stat{
+padding:42px 20px;
+text-align:center;
+}
+
+.stat h2{
+font-size:42px;
+color:var(--red);
+margin:0;
+}
+
+.stat p{
+color:var(--muted);
+margin:8px 0 0;
+}
+
+section{
+padding:95px 7%;
+}
+
+.section-title{
+font-size:46px;
+text-transform:uppercase;
+margin:0 0 45px;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:25px;
+}
+
+.card{
+background:var(--dark);
+padding:36px;
+border-left:5px solid var(--red);
+box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+.card h3{
+font-size:24px;
+margin-top:0;
+}
+
+.card p{
+color:var(--muted);
+line-height:1.7;
+}
+
+.about{
+position:relative;
+padding:120px 7%;
+display:flex;
+align-items:center;
+justify-content:flex-end;
+min-height:600px;
+background:#0b0b0b;
+overflow:hidden;
+}
+
+/* LOGO EN FOND */
+.about::before{
+content:"";
+position:absolute;
+left:6%;
+top:50%;
+transform:translateY(-50%);
+width:520px;
+height:520px;
+background:url("logo.png") no-repeat center/contain;
+opacity:.16;
+filter:brightness(1) contrast(15);
+z-index:1;
+}
+
+/* OVERLAY GRADIENT POUR LISIBILITÉ */
+.about-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(90deg,rgba(0,0,0,.9) 20%, rgba(0,0,0,.6) 60%, rgba(0,0,0,.95) 100%);
+}
+
+/* CONTENU */
+.about-content{
+position:relative;
+max-width:600px;
+z-index:2;
+animation:fadeUp 1s ease;
+}
+
+.about h2{
+font-size:52px;
+letter-spacing:2px;
+margin-bottom:25px;
+}
+
+.about p{
+color:#cfcfcf;
+line-height:1.8;
+font-size:17px;
+margin-bottom:18px;
+}
+
+/* TEXTE IMPACT */
+.highlight{
+font-size:22px;
+font-weight:600;
+color:white;
+margin-bottom:25px;
+}
+
+.highlight span{
+color:var(--red);
+}
+
+/* BOUTON + IMPACT */
+.about .btn{
+margin-top:20px;
+padding:16px 32px;
+font-size:15px;
+letter-spacing:1px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+.about{
+justify-content:center;
+text-align:center;
+}
+
+.about::before{
+content:"";
+position:absolute;
+left:6%;
+top:50%;
+transform:translateY(-50%);
+width:520px;
+height:520px;
+background:url("logo.png") no-repeat center/contain;
+opacity:.28;
+filter:brightness(1.5) contrast(1.2);
+z-index:1;
+pointer-events:none;
+}
+.about-content{
+max-width:100%;
+}
+}
+.about-overlay{
+z-index:0;
+}
+
+.about-content{
+position:relative;
+z-index:2;
+}
+
+.about-img{
+height:500px;
+background:url("cuisine-about.jpg") center/cover;
+}
+
+.about p{
+color:#ccc;
+line-height:1.8;
+font-size:17px;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+}
+
+.gallery img{
+width:100%;
+height:290px;
+object-fit:cover;
+filter:brightness(.78);
+transition:.3s;
+}
+
+.gallery img:hover{
+filter:brightness(1);
+transform:scale(1.02);
+}
+
+.refs{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:14px 40px;
+color:#ccc;
+}
+
+.refs p{
+border-bottom:1px solid #333;
+padding-bottom:10px;
+}
+
+.testimonials{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+.quote{
+background:var(--dark);
+padding:32px;
+border-top:4px solid var(--red);
+line-height:1.7;
+}
+
+.quote strong{
+display:block;
+margin-top:18px;
+color:white;
+}
+
+.contact{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+background:#151515;
+}
+
+.contact input,
+.contact textarea{
+width:100%;
+padding:16px;
+margin-bottom:14px;
+background:#0e0e0e;
+border:1px solid #444;
+color:white;
+}
+
+.contact button{
+background:var(--red);
+color:white;
+border:0;
+padding:16px 30px;
+font-weight:800;
+cursor:pointer;
+}
+
+footer{
+background:#070707;
+padding:30px;
+text-align:center;
+color:#aaa;
+}
+
+@media(max-width:900px){
+.logo img{
+height:58px;
+}
+
+header{
+padding:18px 7%;
+}
+
+.hero{
+padding-top:140px;
+}
+}
+html{scroll-behavior:smooth;}
+
+section,.stat,.card,.quote,.hero-card{
+opacity:0;
+transform:translateY(45px);
+transition:opacity .8s ease, transform .8s ease;
+}
+
+.gallery img{
+opacity:1;
+transform:none;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.btn,.card,.quote,.gallery img{
+will-change:transform;
+}
+
+.card:hover,.quote:hover{
+transform:translateY(-8px);
+box-shadow:0 35px 80px rgba(181,31,36,.25);
+}
+
+.hero h1{
+animation:fadeLeft 1s ease forwards;
+}
+
+.hero p,.hero .btn{
+animation:fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeLeft{
+from{opacity:0;transform:translateX(-60px);}
+to{opacity:1;transform:translateX(0);}
+}
+
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+.eyebrow{
+color:var(--red);
+font-size:13px;
+font-weight:800;
+letter-spacing:2.5px;
+text-transform:uppercase;
+margin-bottom:18px;
+}
+
+.hero h1{
+font-size:78px;
+line-height:.95;
+max-width:850px;
+text-transform:none;
+letter-spacing:-2px;
+}
+
+.hero p{
+font-size:19px;
+max-width:650px;
+}
+
+.hero-actions{
+display:flex;
+gap:18px;
+margin-top:34px;
+}
+
+.btn-secondary{
+display:inline-block;
+padding:14px 28px;
+color:white;
+border:1px solid rgba(255,255,255,.35);
+text-decoration:none;
+font-weight:800;
+border-radius:3px;
+transition:.25s;
+}
+
+.btn-secondary:hover{
+background:white;
+color:#111;
+}
+
+.hero-card{
+border-left:4px solid var(--red);
+box-shadow:0 30px 90px rgba(0,0,0,.45);
+}
+
+.services-section{
+background:#0b0b0b;
+}
+
+.services-premium{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:28px;
+}
+
+.service-card{
+position:relative;
+background:linear-gradient(145deg,#171717,#0f0f0f);
+padding:42px 34px;
+min-height:280px;
+border:1px solid rgba(255,255,255,.08);
+overflow:hidden;
+transition:.35s ease;
+}
+
+.service-card::before{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(135deg,rgba(181,31,36,.25),transparent 55%);
+opacity:0;
+transition:.35s ease;
+}
+
+.service-card:hover::before{
+opacity:1;
+}
+
+.service-card:hover{
+transform:translateY(-10px);
+box-shadow:0 35px 90px rgba(181,31,36,.22);
+}
+
+.service-card span{
+color:var(--red);
+font-size:14px;
+font-weight:800;
+letter-spacing:2px;
+}
+
+.service-card h3{
+position:relative;
+font-size:28px;
+margin:28px 0 18px;
+color:white;
+}
+
+.service-card p{
+position:relative;
+color:#bdbdbd;
+font-size:16px;
+line-height:1.8;
+}
+
+@media(max-width:900px){
+.services-premium{
+grid-template-columns:1fr;
+}
+}
+
+.reviews-section{
+background:linear-gradient(180deg,#0b0b0b,#151515);
+}
+
+.reviews-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:26px;
+}
+
+.review-card{
+background:linear-gradient(145deg,#171717,#0f0f0f);
+padding:34px;
+border:1px solid rgba(255,255,255,.08);
+border-top:4px solid var(--red);
+box-shadow:0 25px 70px rgba(0,0,0,.35);
+transition:.35s ease;
+}
+
+.review-card:hover{
+transform:translateY(-8px);
+box-shadow:0 35px 90px rgba(181,31,36,.22);
+}
+
+.stars{
+color:#ffcc4d;
+font-size:22px;
+letter-spacing:3px;
+margin-bottom:18px;
+}
+
+.review-card p{
+color:#d0d0d0;
+font-size:16px;
+line-height:1.8;
+}
+
+.review-card strong{
+display:block;
+margin-top:22px;
+color:white;
+font-size:15px;
+}
+
+.review-cta{
+text-align:center;
+margin-top:42px;
+}
+
+@media(max-width:900px){
+.reviews-grid{
+grid-template-columns:1fr;
+}
+}
+
+.contact-premium{
+background:linear-gradient(135deg,#0b0b0b,#171717);
+}
+
+.contact-info{
+display:flex;
+flex-direction:column;
+gap:18px;
+}
+
+.contact-card{
+background:linear-gradient(145deg,#171717,#0f0f0f);
+padding:22px;
+border-left:4px solid var(--red);
+box-shadow:0 20px 60px rgba(0,0,0,.3);
+}
+
+.contact-card h3{
+margin:0 0 10px;
+color:white;
+font-size:20px;
+}
+
+.contact-card p{
+margin:0;
+color:#ccc;
+line-height:1.7;
+}
+
+.map-container{
+overflow:hidden;
+border-radius:14px;
+border:1px solid rgba(255,255,255,.12);
+box-shadow:0 25px 70px rgba(0,0,0,.45);
+}
+
+.contact-form{
+background:#101010;
+padding:34px;
+border:1px solid rgba(255,255,255,.08);
+box-shadow:0 30px 80px rgba(0,0,0,.4);
+}
+
+.projects-highlight{
+position:relative;
+min-height:600px;
+display:flex;
+align-items:center;
+padding:120px 7%;
+background:url("cuisine-hero.jpg") center/cover no-repeat;
+overflow:hidden;
+}
+
+/* overlay sombre premium */
+.projects-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(120deg,rgba(0,0,0,.85),rgba(0,0,0,.6),rgba(181,31,36,.4));
+z-index:1;
+}
+
+/* contenu */
+.projects-content{
+position:relative;
+z-index:2;
+max-width:700px;
+animation:fadeUp 1s ease;
+}
+
+.projects-title{
+font-size:64px;
+line-height:1.05;
+margin-bottom:25px;
+}
+
+.projects-title span{
+color:var(--red);
+}
+
+.projects-text{
+color:#d0d0d0;
+font-size:18px;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+/* stats design premium */
+.projects-stats{
+display:flex;
+gap:50px;
+margin-bottom:40px;
+}
+
+.projects-stats h3{
+font-size:48px;
+color:var(--red);
+margin:0;
+}
+
+.projects-stats p{
+margin:6px 0 0;
+color:#bbb;
+font-size:14px;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+/* effet hover CTA */
+.projects-highlight .btn{
+padding:16px 34px;
+font-size:15px;
+letter-spacing:1px;
+}
+
+.projects-highlight .btn:hover{
+transform:translateY(-3px) scale(1.02);
+box-shadow:0 20px 50px rgba(181,31,36,.4);
+}
+
+/* responsive */
+@media(max-width:900px){
+.projects-title{
+font-size:42px;
+}
+.projects-stats{
+flex-direction:column;
+gap:20px;
+}
+}
+
+.floating-cta{
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+z-index:9999;
+box-shadow:0 -10px 30px rgba(0,0,0,.35);
+}
+
+.floating-cta a{
+text-align:center;
+padding:16px;
+background:#111;
+color:white;
+text-decoration:none;
+font-weight:800;
+font-size:14px;
+border-right:1px solid rgba(255,255,255,.12);
+}
+
+.floating-cta a:nth-child(2){
+background:var(--red);
+}
+
+.floating-cta a:nth-child(3){
+background:#333; /* couleur sobre pro */
+}
+
+.contact-form select{
+width:100%;
+padding:16px;
+margin-bottom:14px;
+background:#0e0e0e;
+border:1px solid #444;
+color:white;
+}
+
+body{
+padding-bottom:65px;
+}
+
+.burger{
+display:none;
+background:none;
+border:none;
+color:white;
+font-size:30px;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+header{
+padding:16px 6%;
+}
+
+.logo img{
+height:56px;
+}
+
+.burger{
+display:block;
+}
+
+nav{
+display:none;
+position:absolute;
+top:88px;
+left:0;
+width:100%;
+background:#0d0d0d;
+padding:25px;
+text-align:center;
+}
+
+nav.active{
+display:block;
+}
+
+nav a{
+display:block;
+margin:18px 0;
+}
+
+.hero,
+.video-hero{
+grid-template-columns:1fr;
+padding:140px 6% 70px;
+text-align:left;
+}
+
+.hero h1{
+font-size:48px;
+letter-spacing:0;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.hero-actions{
+flex-direction:column;
+}
+
+.services,
+.services-premium,
+.stats,
+.gallery,
+.refs,
+.reviews-grid,
+.contact,
+.process-grid{
+grid-template-columns:1fr;
+}
+
+section{
+padding:75px 6%;
+}
+
+.section-title{
+font-size:38px;
+}
+
+.gallery img{
+height:240px;
+}
+
+.floating-cta a{
+font-size:12px;
+padding:14px 8px;
+}
+}
+
+@media(max-width:900px){
+.header-call{
+display:none;
+}
+}
+
+@media(max-width:900px){
+nav{
+display:none;
+}
+
+nav.active{
+display:block;
+}
+
+nav a{
+font-size:15px;
+}
+}
+
+@media(max-width:480px){
+.hero h1{
+font-size:40px;
+line-height:1;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.projects-title{
+font-size:36px;
+}
+
+.logo img{
+height:48px;
+}
+
+.floating-cta a{
+font-size:11px;
+padding:13px 5px;
+}
+
+.contact-form{
+padding:24px;
+}
+}
+
+.header-actions{
+display:flex;
+gap:8px;
+align-items:center;
+margin-left:20px;
+}
+
+.header-actions .btn{
+padding:13px 24px;
+font-size:14px;
+border-radius:4px;
+}
+
+@media(max-width:900px){
+.header-actions{
+display:none;
+}
+}
+
+.press-section{
+display:grid;
+grid-template-columns:.8fr 1.2fr;
+gap:50px;
+align-items:center;
+background:linear-gradient(135deg,#090909,#171717);
+}
+
+.press-content p{
+color:#ccc;
+font-size:18px;
+line-height:1.8;
+margin-bottom:30px;
+}
+
+.press-image{
+overflow:hidden;
+border-radius:18px;
+box-shadow:0 35px 90px rgba(0,0,0,.55);
+border:1px solid rgba(255,255,255,.12);
+}
+
+.press-image img{
+width:100%;
+height:auto;
+display:block;
+filter:brightness(.92);
+transition:.4s ease;
+}
+
+.press-image:hover img{
+filter:brightness(1);
+transform:scale(1.02);
+}
+
+@media(max-width:900px){
+.press-section{
+grid-template-columns:1fr;
+}
+
+.press-image{
+max-height:650px;
+overflow:auto;
+}
+}
+
+.map-reunion{
+position:relative;
+max-width:500px;
+margin:40px auto 0 auto; /* 👉 centre horizontalement */
+}
+.map-reunion img{
+width:100%;
+filter:brightness(.9);
+}
+
+/* POINTS */
+.point{
+position:absolute;
+text-align:center;
+transform:translate(-50%,-50%);
+}
+
+.point span{
+display:block;
+color:var(--red);
+font-size:34px;
+font-weight:800;
+}
+
+.point p{
+margin:0;
+font-size:12px;
+color:#ccc;
+text-transform:uppercase;
+letter-spacing:1px;
+}
+
+/* POSITION SUR LA CARTE (à ajuster selon ton image) */
+.point.nord{
+top:20%;
+left:60%;
+}
+
+.point.sud{
+top:85%;
+left:55%;
+}
+
+.point.ouest{
+top:55%;
+left:25%;
+}
+
+.point:hover span{
+transform:scale(1.2);
+transition:.2s;
+}
+
+.projects-highlight{
+display:flex;
+justify-content:center;
+}
+
+.map-reunion{
+margin:0 auto;
+}
+
+.projects-content{
+max-width:900px;
+margin:0 auto;
+}
+
+.point{
+opacity:0;
+transform:translate(-50%,-50%) translateY(20px);
+transition:opacity .8s ease, transform .8s ease;
+}
+
+.point.show-point{
+opacity:1;
+transform:translate(-50%,-50%) translateY(0);
+}
+
+.point span{
+display:block;
+font-size:48px;
+font-weight:900;
+color:var(--red);
+text-shadow:none;
+}
+
+.point p{
+margin:0;
+font-size:13px;
+font-weight:700;
+letter-spacing:1.5px;
+text-transform:uppercase;
+color:white;
+}
+
+.social-icons{
+display:flex;
+gap:12px;
+align-items:center;
+margin-left:15px;
+}
+
+.social-icons a{
+display:flex;
+align-items:center;
+justify-content:center;
+width:38px;
+height:38px;
+border-radius:50%;
+background:rgba(255,255,255,0.08);
+color:white;
+font-size:16px;
+transition:.25s;
+}
+
+.social-icons a:hover{
+background:var(--red);
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(181,31,36,.4);
+}
+
+@media(max-width:900px){
+.social-icons{
+display:none;
+}
+}
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Neo Cuisines">
+        </div>
+        <button class="burger" onclick="toggleMenu()">☰</button>
+
+        <nav id="menu">
+        <a href="#services">Services</a>
+        <a href="#about">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact">Contact</a>
+        </nav>
+        <div class="header-actions">
+            <a class="btn header-call" href="tel:0262303077">Appeler</a>
+            <a class="btn header-call" href="mailto:eric@neocuisines.fr?subject=Demande de devis cuisine&body=Bonjour,%0D%0A%0D%0AJe souhaite un devis pour :%0D%0A%0D%0AType de projet :%0D%0ABudget :%0D%0ADélai :%0D%0A%0D%0AMerci.">E-mail</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/neocuisines974" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/neocuisines/" target="_blank">
+                <i class="fab fa-instagram"></i>
+                </a>
+                </div>
+</header>
+
+<section class="hero video-hero">
+<video autoplay muted loop playsinline class="hero-video">
+<source src="video-cuisine.mp4" type="video/mp4">
+</video>
+    
+<div class="hero-overlay"></div>
+    
+<div class="hero-content">
+<p class="eyebrow">CUISINES ITALIENNES SUR-MESURE</p>
+<h1>L’élégance italienne, pensée pour votre intérieur.</h1>
+<p>Neo Cuisines conçoit des cuisines haut de gamme, fonctionnelles et durables, adaptées à votre espace et à votre style de vie.</p>
+    
+<div class="hero-actions">
+<a class="btn" href="#contact">Créer mon projet</a>
+<a class="btn-secondary" href="#projets">Voir les réalisations</a>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Pourquoi choisir Neo Cuisines ?</h2>
+    
+<div class="services">
+<div class="card">
+<h3>Expertise locale</h3>
+<p>Plus de 30 ans d’expérience à La Réunion et dans l’océan Indien.</p>
+</div>
+    
+<div class="card">
+<h3>Qualité italienne</h3>
+<p>Des cuisines pensées pour durer, avec une exigence forte sur les finitions.</p>
+</div>
+    
+<div class="card">
+<h3>Accompagnement humain</h3>
+<p>Un projet suivi de la première idée jusqu’à l’installation finale.</p>
+</div>
+</div>
+</section>
+
+<div class="stats">
+<div class="stat"><h2>+ de 30</h2><p>ans d’expérience</p></div>
+<div class="stat"><h2>+ de 5 000</h2><p>cuisines installées</p></div>
+<div class="stat"><h2>+ de 40</h2><p>résidences équipées</p></div>
+<div class="stat"><h2>100%</h2><p>sur-mesure</p></div>
+</div>
+
+<section id="services" class="services-section">
+    <p class="eyebrow">NOTRE SAVOIR-FAIRE</p>
+    <h2 class="section-title">Une cuisine pensée, dessinée et installée pour vous</h2>
+    
+    <div class="services-premium">
+    
+    <div class="service-card">
+    <span>01</span>
+    <h3>Conception sur-mesure</h3>
+    <p>Chaque cuisine est imaginée selon vos volumes, vos habitudes et votre style de vie.</p>
+    </div>
+    
+    <div class="service-card">
+    <span>02</span>
+    <h3>Design italien</h3>
+    <p>Des lignes élégantes, des finitions premium et une esthétique contemporaine.</p>
+    </div>
+    
+    <div class="service-card">
+    <span>03</span>
+    <h3>Accompagnement complet</h3>
+    <p>De l’étude du projet jusqu’à la pose finale, vous êtes guidé à chaque étape.</p>
+    </div>
+    
+    </div>
+    </section>
+
+<section id="about" class="about">
+<div class="about-overlay"></div>
+    
+    <div class="about-content">
+    <h2 class="section-title">NEO CUISINES</h2>
+    
+    <p class="highlight">
+    Plus de <span>30 ans d’expertise</span> dans la conception de cuisines sur-mesure haut de gamme.
+    </p>
+    
+    <p>
+    La société a été fondée par les époux JETHA, dont Eric JETHA qui possède plus de trente années d’expérience dans la cuisine équipée.
+    </p>
+    
+    <p>
+    Les équipes de NEO CUISINES ont équipé plus de <strong>40 résidences</strong> pour des promoteurs immobiliers et installé plus de <strong>5 000 cuisines</strong> pour des particuliers ces dix dernières années.
+    </p>
+    
+    <p>
+    Présente sur toute l’île, dans l’Océan Indien et à l’international, NEO CUISINES vous accompagne de la conception à l’installation avec exigence et précision.
+    </p>
+    
+    <p class="eyebrow">Devis Gratuit sur rendez-vous</p>
+        
+    <a class="btn" href="#contact">Se rencontrer</a>
+    </div>
+    </section>
+
+    <section class="press-section">
+        <div class="press-content">
+        <p class="eyebrow">PARUTION PRESSE</p>
+        <h2 class="section-title">Neo Cuisines dans la presse</h2>
+        <p>
+        Une mise en avant de l’expertise de Neo Cuisines : plus de 30 ans d’expérience,
+        des cuisines italiennes sur-mesure et un accompagnement reconnu à La Réunion.
+        </p>
+        <a href="#contact" class="btn">Rencontrer Éric Jetha</a>
+        </div>
+        
+        <div class="press-image">
+        <img src="article-neo-cuisines.jpg" alt="Article presse Neo Cuisines">
+        </div>
+        </section>
+
+<section id="projets">
+<h2 class="section-title">Quelques projets</h2>
+<div class="gallery">
+<img src="IMG_6834.JPG" alt="Cuisine italienne sur-mesure Neo Cuisines">
+<img src="IMG_6835.JPG" alt="Cuisine italienne sur-mesure Neo Cuisines">
+<img src="IMG_6833.JPG" alt="Cuisine italienne sur-mesure Neo Cuisines">
+<img src="IMG_6826.JPG" alt="Cuisine italienne sur-mesure Neo Cuisines">
+<img src="IMG_6823.JPG" alt="Cuisine italienne sur-mesure Neo Cuisines">
+<img src="IMG_6825.JPG" alt="Cuisine italienne sur-mesure Neo Cuisines">
+<img src="IMG_6824.JPG" alt="Cuisine italienne sur-mesure Neo Cuisines">
+<img src="IMG_6830.JPG" alt="Cuisine italienne sur-mesure Neo Cuisines">
+<img src="IMG_6822.JPG" alt="Cuisine italienne sur-mesure Neo Cuisines">
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Quelques références</h2>
+<div class="refs">
+<p>Résidence Jardin des Hirondelles — Ste-Clotilde</p>
+<p>Résidence Les Cyprès — Ste-Clotilde</p>
+<p>Résidence Hélène I et II — Ste-Clotilde</p>
+<p>Résidence Fleur de Vanille — Ste-Clotilde</p>
+<p>Résidence Mizane — Ste-Clotilde</p>
+<p>Résidence Les Flamboyants I et II — St-Denis</p>
+<p>Résidence Sacha — Ste-Clotilde</p>
+<p>Résidence Taha — Ste-Clotilde</p>
+<p>Résidence Maryam — Ste-Clotilde</p>
+<p>Résidence Labourdonnais — Ste-Clotilde</p>
+<p>Résidence Belle Île — Ste-Clotilde</p>
+<p>Résidence Milius — St-Denis</p>
+<p>Résidence Lobélia — Ste-Clotilde</p>
+<p>Résidence Paille en queue — Ste-Marie</p>
+<p>Résidence Ravine Cadet — Ste-Clotilde</p>
+<p>Villas de l’Espadon — St-Gilles</p>
+<p>Résidence Jean — Ste-Anne</p>
+<p>Résidence 3 Couleurs — La Possession</p>
+<p>Résidence Ti-train — La Possession</p>
+<p>Résidence Tessoneau — St-Paul</p>
+<p>Résidence Jules — La Saline</p>
+</div>
+</section>
+
+<section class="projects-highlight">
+    <div class="projects-overlay"></div>
+    
+    <div class="projects-layout">
+    <div class="projects-content">
+    <p class="eyebrow">RÉALISATIONS RÉCENTES</p>
+    <h2 class="projects-title">
+    Des projets d’exception<br>
+    <span>à travers La Réunion</span>
+    </h2>
+    <p class="projects-text">
+    Neo Cuisines accompagne des programmes immobiliers d’envergure et des projets haut de gamme, du nord au sud de l’île.
+    </p>
+    <a href="#contact" class="btn">Discuter de mon projet</a>
+    </div>
+    
+    <div class="map-reunion">
+    <img src="reunion-map.png" alt="Carte de La Réunion">
+    
+    <div class="point nord"><span>52</span><p>Logements Nord</p></div>
+    <div class="point sud"><span>54</span><p>Logements Sud</p></div>
+    <div class="point ouest"><span>36</span><p>Villas Grand Anse</p></div>
+    
+    </div>
+    </div>
+    </section>
+
+<section id="avis" class="reviews-section">
+    <p class="eyebrow">AVIS CLIENTS</p>
+    <h2 class="section-title">Ils nous ont confié leur cuisine</h2>
+    
+    <div class="reviews-grid">
+    
+    <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>« Conseils au top, livraison dans les temps, qualité au rendez-vous, je recommande. »</p>
+    <strong>Shamir Djaffaraly</strong>
+    </div>
+    
+    <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>« Cuisine haut de gamme et sur mesure, qualité garantie avec des bons matériaux. Merci pour la réalisation de notre projet. Nous sommes satisfaits à 100%. »</p>
+    <strong>Paul Rodrigues</strong>
+    </div>
+    
+    <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>« 6 cuisines livrées en temps et en heure : efficacité et rigueur. Une belle assistance du projet à la réalisation. »</p>
+    <strong>Noely Ratsimiebo</strong>
+    </div>
+    
+    <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p>« Toujours aussi satisfaits par NEO CUISINES. Leurs magnifiques cuisines ont embelli nos intérieurs. »</p>
+    <strong>Nilam Kalfane</strong>
+    </div>
+    
+    </div>
+    
+    <div class="review-cta">
+    <a class="btn" href="https://www.google.com/search?sca_esv=f96598b3615de8be&sxsrf=ANbL-n4j6j8ySXBPByGmXuo4hqVXF1Ipfg:1778498650074&si=AL3DRZEsmMGCryMMFSHJ3StBhOdZ2-6yYkXd_doETEE1OR-qOeQGEY4QThYsv0B25xsDqFaMBSzZnceP3jQye-XS9HYHcX-VZJsJo0eezf-4zUd_OYTl3ZgheOGLQIuOOUC4vq3MxLth&q=NEO+CUISINES+Avis&sa=X&ved=2ahUKEwjDu5Xij7GUAxUk6ckDHYbcJdMQ0bkNegQIPBAH&biw=1440&bih=812&dpr=2" target="_blank">
+    Laisser un avis Google
+    </a>
+    </div>
+    </section>
+
+
+    <section id="contact" class="contact contact-premium">
+        <div class="contact-info">
+        <p class="eyebrow">CONTACT</p>
+        <h2 class="section-title">Parlons de votre projet cuisine</h2>
+        
+        <div class="contact-card">
+        <h3>Showroom</h3>
+        <p>5 Rue Lory Les Bas<br>Saint-Denis 97490, La Réunion</p>
+        </div>
+        
+        <div class="map-container">
+        <iframe
+        src="https://www.google.com/maps?q=Neo+Cuisines+5+Rue+Lory+Les+Bas+Saint-Denis+97490+La+Réunion&output=embed"
+        width="100%"
+        height="280"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+        </iframe>
+        </div>
+        
+        <div class="contact-card">
+        <h3>Téléphone</h3>
+        <p>0262 30 30 77<br>06 92 61 01 18<br>06 93 49 29 28</p>
+        </div>
+        
+        <div class="contact-card">
+        <h3>Email</h3>
+        <p>eric@neocuisines.fr</p>
+        </div>
+        </div>
+        
+        <form class="contact-form" 
+        action="https://formspree.io/f/mayvlkgr" 
+        method="POST" 
+        enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="Nouvelle demande de devis Neo Cuisines">
+        <input type="hidden" name="_replyto" value="email">
+        <input type="text" name="prenom" placeholder="Prénom" required>
+        <input type="text" name="nom" placeholder="Nom de famille" required>
+        <input type="email" name="email" placeholder="E-mail" required>
+        <input type="tel" name="telephone" placeholder="Téléphone">
+        <select name="projet">
+            <option>Type de projet</option>
+            <option>Cuisine neuve</option>
+            <option>Rénovation</option>
+            <option>Réaménagement</option>
+            <option>Projet immobilier</option>
+            </select>
+            
+            <select name="budget">
+                <option>Budget estimé</option>
+                <option>Moins de 5 000€</option>
+                <option>5 000€ - 10 000€</option>
+                <option>10 000€ - 20 000€</option>
+                <option>Plus de 20 000€</option>
+                </select>
+
+        
+            <input type="file" multiple>
+            
+            <textarea name="message" rows="5" placeholder="Décrivez votre projet"></textarea>
+            <button type="submit">Envoyer ma demande</button>
+            </form>
+        </section>
+
+
+<footer>
+© 2026 Neo Cuisines — Cuisines italiennes sur-mesure
+</footer>
+
+<script>
+    const elements = document.querySelectorAll("section,.stat,.card,.quote,.hero-card");
+    
+    const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+    if(entry.isIntersecting){
+    entry.target.classList.add("show");
+    }
+    });
+    },{threshold:0.15});
+    
+    elements.forEach(el=>observer.observe(el));
+    </script>
+ 
+<script>
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("active");
+}
+</script>
+
+<script>
+const map = document.querySelector(".map-reunion");
+const mapPoints = document.querySelectorAll(".point");
+
+if(map){
+const mapObserver = new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+mapPoints.forEach((point,index)=>{
+setTimeout(()=>{
+point.classList.add("show-point");
+}, index * 400);
+});
+mapObserver.unobserve(map);
+}
+});
+},{threshold:.15});
+
+mapObserver.observe(map);
+}
+</script>
+</body>
+</html>
